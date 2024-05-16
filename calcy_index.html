@@ -34,7 +34,7 @@
             <div class="row  ">
                 <div class="col-9 ">
                     <div class="row  ">
-                        <div class="col-4   d-grid ga">
+                        <div onmouseover="this.style.backgroundColor='red'" class="col-4   d-grid ga">
                             <button type="button" class="btn btn-light m-1 border border-black"><i class="fa-solid fa-1"></i></button>
                         </div>
                         <div class="col-4   d-grid ga">
@@ -73,11 +73,17 @@
                     </div>
                 </div>
                 <div class="col-3   d-grid ga">
-                    <button type="button" class="btn btn-primary m-1 border border-black"><i class="fa-solid fa-equals"></i></button>
+                    <button onclick="alert('Hello')" type="button" class="btn btn-primary m-1 border border-black"><i class="fa-solid fa-equals"></i></button>
                 </div>
             </div>
         </div>
             </div>   
     </div>
+
+<script> 
+alert(10 / 2);
+alert(10%3);
+<button onclick="alert('Hello')">Click me.</button>
+</script>
 </body>
 </html>
