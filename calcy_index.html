@@ -81,25 +81,40 @@
     </div>
 
 <script> 
-    let displayValue = '';
-
-    function appendToDisplay(value) {
-        displayValue += value;
-        document.getElementById('display').value = displayValue;
+    
+    function clearDisplay() {
+        const display = document.getElementById('display');
+        display.value = '';
     }
 
-    function clearDisplay() {
-        displayValue = '';
-        document.getElementById('display').value = '';
+    function appendToDisplay(value) {
+        const display = document.getElementById('display');
+        const currentValue = display.value;
+        // Replace the last operator if a new operator is clicked
+        if (isOperator(value) && isOperator(currentValue.slice(-1))) {
+            display.value = currentValue.slice(0, -1) + value;
+        } else {
+            display.value += value;
+        }
+    }
+
+    function isOperator(char) {
+        return ['+', '-', '*', '/'].includes(char);
     }
 
     function calculate() {
+        const display = document.getElementById('display');
         try {
-            let result = eval(displayValue);
-            document.getElementById('display').value = result;
-            displayValue = '';
+            let result = eval(display.value);
+            if (!isFinite(result)) {
+                display.value = 'Error';
+                alert('Invalid calculations : not finite')
+            } else {
+                display.value = result;
+            }
         } catch (error) {
-            document.getElementById('display').value = 'Error';
+            display.value = 'Error';
+            alert('Invalid calculations : alphabet used')
         }
     }
 </script>
