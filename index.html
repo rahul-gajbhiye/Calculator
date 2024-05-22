@@ -90,12 +90,6 @@
     function appendToDisplay(value) {
         const display = document.getElementById('display');
         const currentValue = display.value;
-
-        // Validate input
-        if (!isValidInput(currentValue, value)) {
-            return;
-        }
-
         // Replace the last operator if a new operator is clicked
         if (isOperator(value) && isOperator(currentValue.slice(-1))) {
             display.value = currentValue.slice(0, -1) + value;
