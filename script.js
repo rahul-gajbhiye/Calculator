@@ -67,12 +67,12 @@ function calculate() {
         let result = eval(expression);
         if (!isFinite(result)) {
             display.value = 'Error';
-            alert('Invalid calculations: not finite');
+            alert('Invalid calculations');
         } else {
             display.value = result;
         }
     } catch (error) {
         display.value = 'Error';
-        alert('Invalid calculations: alphabet used');
+        alert('Invalid calculations');
     }
 }
