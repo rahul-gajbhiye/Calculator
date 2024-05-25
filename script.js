@@ -67,12 +67,12 @@ function calculate() {
         let result = eval(expression);
         if (!isFinite(result)) {
             display.value = 'Error';
-            alert('Invalid calculations');
+            alert('Invalid calculation');
         } else {
             display.value = result;
         }
     } catch (error) {
         display.value = 'Error';
-        alert('Invalid calculations');
+        alert('Invalid calculation');
     }
 }
